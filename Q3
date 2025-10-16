@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+struct Point {
+float x;
+float y;
+};
+
+int main() {
+   
+    Point coordinates[7] = {
+        {1,1},
+        {-8,-1},
+        {3,2},
+        {7,-8},
+        {8,0},
+        {-3,2},
+        {7,1},
+    };
+
+    
+    for (int i = 0; i < 7; i++) {
+        if ( coordinates[i].x>0 && coordinates[i].y>0){
+            cout<< "the points lying in the first quadrant are "<< "{"<< coordinates[i].x<< " , "<< coordinates[i].y<< "}\n";
+        }
+
+    }
+
+  
+
+    return 0;
+}
+
+
+	
