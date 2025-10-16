@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct SalesRecord {
+    string month;
+    float amount;
+};
+
+int main() {
+    SalesRecord yearSales[12];
+
+   
+    for (int i = 0; i < 12; i++) {
+        cout << "Enter month name for record " << (i + 1) << ": ";
+        cin >> yearSales[i].month;
+        cout << "Enter sales amount for " << yearSales[i].month << ": ";
+        cin >> yearSales[i].amount;
+    }
+
+    
+    SalesRecord maxSales = yearSales[0];
+    SalesRecord minSales = yearSales[0];
+
+   
+    for (int i = 1; i < 12; i++) {
+        if (yearSales[i].amount > maxSales.amount) {
+            maxSales = yearSales[i];
+        }
+        if (yearSales[i].amount < minSales.amount) {
+            minSales = yearSales[i];
+        }
+    }
+
+    
+    cout << "\nMonth with maximum sales: " << maxSales.month << " (Amount: " << maxSales.amount << ")\n";
+    cout << "Month with minimum sales: " << minSales.month << " (Amount: " << minSales.amount << ")\n";
+
+    return 0;
+}
